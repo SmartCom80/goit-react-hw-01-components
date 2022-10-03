@@ -1,12 +1,15 @@
 import Profile from './Profile';
 import user from '../user.json';
+import data from '../data.json';
+import Statistics from './Statistics';
+import StatList from './StatList';
 
 export const App = () => {
   return (
     <div
       style={{
         height: '100vh',
-        display: 'flex',
+        display: 'block',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -20,6 +23,10 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
+
+      <Statistics title="Upload stats" stats={data}>
+        <StatList stats={data} />
+      </Statistics>
     </div>
   );
 };
